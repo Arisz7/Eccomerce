@@ -1,0 +1,42 @@
+.recommended-flex {
+    display: flex;
+    margin-left: 20rem;
+}
+
+.recommended-title {
+    margin-left: 20rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
+.btns {
+    /* padding: 10px 20px;
+    margin-right: 6px;
+    background: transparent;
+    border: none;
+    border: 0.6px solid #ccc;
+    border-radius: 5px;
+    color: #323323;
+    cursor: pointer; */
+    background-image: linear-gradient(to right, #000000 0%, #434343 51%, #000000 100%);
+    margin: 10px;
+    font-family: Trebuchet;
+    padding: 10px 20px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btns:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
