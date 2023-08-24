@@ -6,15 +6,14 @@ import data from './db/data'
 import Recommended from './recommended/Recommended'
 import Card from './components/Card'
 import "./index.css";
-import ModalProvider from './navigation/ModalProvider'
+import Modal from './components/Modal'
 
 
 
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null)
-
-
+  const { productItems } = data
   // ------- Input Filter --------
   const [query, setQuery] = useState("")
 
@@ -25,7 +24,7 @@ function App() {
 
   const filteredItems = data.filter(
     (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
-  ); 
+  );
 
   // ------- Radio Filter --------
   const handleChange = (event) => {
@@ -57,14 +56,6 @@ function App() {
       );
     }
 
-    const [cart, setCart] = useState([]);
-
-    const onAddProduct = (id) => {
-      cart.push(id)
-
-    }
-
-
     return (
       <>
         {
@@ -75,29 +66,21 @@ function App() {
               img={item.img}
               title={item.title}
               star={item.star}
-              cart={cart}
-              setCart={setCart}
               reviews={item.reviews}
               quantity={item.quantity}
               prevPrice={item.prevPrice}
-              onAddProduct={onAddProduct}
               newPrice={item.newPrice}
             />
           ))}
-
-
       </>
     );
   };
-
-
 
   const result = filteredProducts(data, selectedCategory, query);
 
   return (
     <>
 
-      <ModalProvider />
       <Navigation query={query} handleInputChange={handleInputChange} />
       <Sidebar handleChange={handleChange} />
       <Recommended handleClick={handleClick} />

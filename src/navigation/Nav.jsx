@@ -1,11 +1,23 @@
 import { FiShoppingCart } from "react-icons/fi";
+import { BiPlus } from "react-icons/bi"
 import React, { useState } from "react";
 import "./Nav.css";
+import { useCart } from "../context/Context";
 import Modal from "../components/Modal";
-
 
 const Nav = ({ handleInputChange, query }) => {
     const [openModal, setIsOpen] = useState(false);
+    const items = useCart();
+
+    if (items.length === 0) {
+        return (
+            <>
+                {
+                    console.log("The cart is empty")
+                }
+            </>
+        );
+    }
 
 
     return (
@@ -32,14 +44,38 @@ const Nav = ({ handleInputChange, query }) => {
                 <div className='nav-icons'>
                     <FiShoppingCart size={25} />
                     <span className="absolute -top-2 -right-2 text-[13px] bg-red-600 h-[18px] w-[18px]
-                        rounded-full grid place-items-center text-white">0</span>
+                        rounded-full grid place-items-center text-white">{items.length}</span>
                 </div>
                 <Modal title="Shopping cart" isOpen={openModal} onClose={() => setIsOpen(false)}>
-                    
+                    <>
+                        <main>
+                            {
+                                items.map((item) => (
+                                    <>
+                                        <section className="modal-card" key={item.key}>
+                                            <img src={item.img} alt={item.title} className="modal-card-img" />
+                                            <div className="modal-card-details">
+                                                <h3 className="modal-card-title">{item.title}</h3>
+                                                <section className="modal-card-reviews">
+                                                    {item.star} {item.star} {item.star} {item.star}
+                                                </section>
+                                                <section className="modal-card-price">
+                                                    <div className="modal-price">
+                                                        <del>{item.prevPrice}</del> {item.newPrice}
+                                                    </div>
+                                                    <i className="modal-plus-icon">
+                                                        <BiPlus />
+                                                    </i>
+                                                </section>
+                                            </div>
+                                        </section>
+                                    </>
+                                ))}
+                        </main>
+                    </>
                 </Modal>
             </button>
         </nav>
-
     );
 };
 

@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
     return (
         <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
-            <Dialog.Portal>
+            <Dialog.Portal className='card'>
                 <Dialog.Overlay className='
                 bg-neutral-900/90
                 backdrop-blur-sm
@@ -43,12 +43,12 @@ const Modal: React.FC<ModalProps> = ({
             md:max-h-[85vh]
             w-full
             md:w-[90vw]
-            md:max-w-[450px]
+            md:max-w-[700px]
             translate-x-[-50%]
             translate-y-[-50%]
             rounded-md
             bg-neutral-200
-            p-[25px]
+            p-[100px]
             focus:outline-none
             '>
                     <Dialog.Title
@@ -64,10 +64,7 @@ const Modal: React.FC<ModalProps> = ({
                     </Dialog.Title>
                     <Dialog.Description
                         className='
-                    mb-5
-                    text-m
-                    loading-normal
-                    text-center
+                   card-title
                     '
                     >
                         {description}

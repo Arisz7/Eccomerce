@@ -54,6 +54,10 @@
     border-radius: 50%;
 }
 
+.check-out:hover {
+    background-color: gray;
+}
+
 .modal {
     position: fixed;
     top: 50%;
