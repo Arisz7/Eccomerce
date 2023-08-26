@@ -1,9 +1,17 @@
-import React from 'react'
+import PropTypes from "prop-types";
 
 function Button({ onClickHandler, value, title }) {
-  return <button onClick={onClickHandler} value={value} className='btns'>
-    {title}
-  </button>
+  return (
+    <button onClick={onClickHandler} value={value} className="btns">
+      {title}
+    </button>
+  );
 }
 
-export default Button
+Button.propTypes = {
+  onClickHandler: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default Button;

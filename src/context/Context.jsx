@@ -1,33 +1,38 @@
-import React, { useReducer, useContext, createContext } from "react";
+import { useReducer, useContext, createContext } from "react";
 
-const NavStateContext = createContext()
-const NavDispatchContext = createContext()
+const NavStateContext = createContext();
+const NavDispatchContext = createContext();
 
 const reducer = (state, action) => {
-    switch (action.type) {
-        case "ADD":
-            return [...state, action.item];
-        case "REMOVE":
-            const newArr = [...state];
-            newArr.splice(action.index, 1)
-            return newArr;
-        default:
-            throw new Error(`unknown action ${action.type}`)
+  switch (action.type) {
+    case "ADD": {
+      return [...state, action.item];
     }
-}
 
-export const CartProvider = ({ children, }) => {
-    const [state, dispatch] = useReducer(reducer, []);
+    case "REMOVE": {
+      const newArr = [...state];
+      newArr.splice(action.index, 1);
+      return newArr;
+    }
+    default: {
+      throw new Error(`unknown action ${action.type}`);
+    }
+  }
+};
 
+/* eslint-disable react/prop-types */
 
-    return (
-        <NavDispatchContext.Provider value={dispatch}>
-            <NavStateContext.Provider value={state}>
-                {children}
-            </NavStateContext.Provider>
-        </NavDispatchContext.Provider>
-    )
-}
+export const CartProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, []);
 
-export const useCart = () => useContext(NavStateContext)
-export const useDispatchCart = () => useContext(NavDispatchContext)
+  return (
+    <NavDispatchContext.Provider value={dispatch}>
+      <NavStateContext.Provider value={state}>
+        {children}
+      </NavStateContext.Provider>
+    </NavDispatchContext.Provider>
+  );
+};
+
+export const useCart = () => useContext(NavStateContext);
+export const useDispatchCart = () => useContext(NavDispatchContext);
