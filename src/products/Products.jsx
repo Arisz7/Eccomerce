@@ -1,12 +1,16 @@
-import React from 'react'
-import './Products.css';
+import PropTypes from "prop-types";
+import "./Products.css";
 
 function Products({ result }) {
-    return (
-        <>
-            <section className='card-container'>{result}</section>
-        </>
-    );
+  return (
+    <>
+      <section className="card-container">{result}</section>
+    </>
+  );
 }
 
-export default Products
+Products.propTypes = {
+  result: PropTypes.node.isRequired,
+};
+
+export default Products;
