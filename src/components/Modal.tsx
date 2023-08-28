@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import * as Dialog from '@radix-ui/react-dialog'
 import { IoMdClose } from 'react-icons/io';
-
 
 interface ModalProps {
     isOpen: boolean;
@@ -10,14 +9,16 @@ interface ModalProps {
     description: string;
     children: React.ReactNode;
 }
-
 const Modal: React.FC<ModalProps> = ({
     isOpen,
     onChange,
     title,
     description,
-    children
+    children,
 }) => {
+
+    const contentRef = useRef(false);
+
     return (
         <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
             <Dialog.Portal className='card'>
@@ -29,7 +30,8 @@ const Modal: React.FC<ModalProps> = ({
                 inset-0
                 '
                 />
-                <Dialog.Content className='
+                <Dialog.Content
+                    className='
             z-20
             fixed
             drop-shadow-md
@@ -43,14 +45,15 @@ const Modal: React.FC<ModalProps> = ({
             md:max-h-[85vh]
             w-full
             md:w-[90vw]
-            md:max-w-[700px]
+            md:max-w-[999px]
             translate-x-[-50%]
             translate-y-[-50%]
             rounded-md
             bg-neutral-200
             p-[100px]
             focus:outline-none
-            '>
+            overflow-y-auto
+            ' >
                     <Dialog.Title
                         className='
                 text-xl

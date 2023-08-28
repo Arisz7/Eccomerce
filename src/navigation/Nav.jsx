@@ -1,24 +1,20 @@
 import { FiShoppingCart } from "react-icons/fi";
-import { BiPlus } from "react-icons/bi"
-import React, { useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { CartItem } from "../products/CartItem";
 import "./Nav.css";
-import { useCart } from "../context/Context";
+import '../products/CartItem.css'
 import Modal from "../components/Modal";
+import CartContext from "../context/cart/CartContext";
 
 const Nav = ({ handleInputChange, query }) => {
+    const { cartItems } = useContext(CartContext)
     const [openModal, setIsOpen] = useState(false);
-    const items = useCart();
 
-    if (items.length === 0) {
-        return (
-            <>
-                {
-                    console.log("The cart is empty")
-                }
-            </>
-        );
-    }
 
+    let opts = { format: '%s%v', symbol: "$" }
+
+    let total = cartItems.reduce(
+        ((acc, item) => acc + item.quantity * item.newPrice), 0, opts);
 
     return (
         <nav>
@@ -43,39 +39,25 @@ const Nav = ({ handleInputChange, query }) => {
             <button onClick={() => setIsOpen(!openModal)} className="container-icon">
                 <div className='nav-icons'>
                     <FiShoppingCart size={25} />
-                    <span className="absolute -top-2 -right-2 text-[13px] bg-red-600 h-[18px] w-[18px]
-                        rounded-full grid place-items-center text-white">{items.length}</span>
+                    {cartItems.length > 0 && (
+                        <span className="absolute -top-2 -right-2 text-[13px] bg-red-600 h-[18px] w-[18px]
+                        rounded-full grid place-items-center text-white">{cartItems.length}</span>
+                    )}
                 </div>
-                <Modal title="Shopping cart" isOpen={openModal} onClose={() => setIsOpen(false)}>
-                    <>
-                        <main>
-                            {
-                                items.map((item) => (
-                                    <>
-                                        <section className="modal-card" key={item.key}>
-                                            <img src={item.img} alt={item.title} className="modal-card-img" />
-                                            <div className="modal-card-details">
-                                                <h3 className="modal-card-title">{item.title}</h3>
-                                                <section className="modal-card-reviews">
-                                                    {item.star} {item.star} {item.star} {item.star}
-                                                </section>
-                                                <section className="modal-card-price">
-                                                    <div className="modal-price">
-                                                        <del>{item.prevPrice}</del> {item.newPrice}
-                                                    </div>
-                                                    <i className="modal-plus-icon">
-                                                        <BiPlus />
-                                                    </i>
-                                                </section>
-                                            </div>
-                                        </section>
-                                    </>
-                                ))}
-                        </main>
-                    </>
+                <Modal title="Carrito" isOpen={openModal} onClose={() => setIsOpen(false)}>
+                    <div className="cart">
+                        <div className="cartItems">
+                            {cartItems.map((p) => (
+                                <CartItem data={p} />
+                            ))}
+                            <div className="cart-total">
+                                Cart Total: {total}
+                            </div>
+                        </div>
+                    </div>
                 </Modal>
             </button>
-        </nav>
+        </nav >
     );
 };
 

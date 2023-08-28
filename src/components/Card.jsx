@@ -1,15 +1,9 @@
-import React, { useState } from "react";
-import { useDispatchCart } from "../context/Context";
+import React, { useContext } from "react";
 import '../sidebar/Sidebar.css'
-
+import CartContext from "../context/cart/CartContext";
 
 const Card = ({ item }) => {
-    const dispatch = useDispatchCart();
-    
-    const addToCart = (item) => {
-        console.log(item)
-        dispatch({ type: "ADD", item });
-    };
+    const { addToCart } = useContext(CartContext)
 
     return (
         <>

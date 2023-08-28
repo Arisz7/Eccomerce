@@ -6,10 +6,6 @@ import data from './db/data'
 import Recommended from './recommended/Recommended'
 import Card from './components/Card'
 import "./index.css";
-import Modal from './components/Modal'
-
-
-
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null)
@@ -80,12 +76,10 @@ function App() {
 
   return (
     <>
-
       <Navigation query={query} handleInputChange={handleInputChange} />
       <Sidebar handleChange={handleChange} />
       <Recommended handleClick={handleClick} />
       <Products result={result} />
-
     </>
   );
 }

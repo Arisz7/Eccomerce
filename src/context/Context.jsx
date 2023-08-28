@@ -1,33 +1,41 @@
-import React, { useReducer, useContext, createContext } from "react";
+import { useReducer } from "react";
+import CartContext from "./cart/CartContext";
+import CartReducer from "./cart/CartReducer";
+import { HIDE_CART, ADD, REMOVE_ITEM } from "./types";
 
-const NavStateContext = createContext()
-const NavDispatchContext = createContext()
+const CartProvider = ({ children }) => {
+    const initalState = {
+        showCart: false,
+        cartItems: [],
+    };
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case "ADD":
-            return [...state, action.item];
-        case "REMOVE":
-            const newArr = [...state];
-            newArr.splice(action.index, 1)
-            return newArr;
-        default:
-            throw new Error(`unknown action ${action.type}`)
-    }
-}
+    const [state, dispatch] = useReducer(CartReducer, initalState);
 
-export const CartProvider = ({ children, }) => {
-    const [state, dispatch] = useReducer(reducer, []);
+    const addToCart = (item) => {
+        dispatch({ type: ADD, payload: item });
+    };
 
+    const showHideCart = () => {
+        dispatch({ type: HIDE_CART });
+    };
+
+    const removeItem = (id) => {
+        dispatch({ type: REMOVE_ITEM, payload: id });
+    };
 
     return (
-        <NavDispatchContext.Provider value={dispatch}>
-            <NavStateContext.Provider value={state}>
-                {children}
-            </NavStateContext.Provider>
-        </NavDispatchContext.Provider>
-    )
-}
+        <CartContext.Provider
+            value={{
+                showCart: state.showCart,
+                cartItems: state.cartItems,
+                addToCart,
+                showHideCart,
+                removeItem,
+            }}
+        >
+            {children}
+        </CartContext.Provider>
+    );
+};
 
-export const useCart = () => useContext(NavStateContext)
-export const useDispatchCart = () => useContext(NavDispatchContext)
+export default CartProvider;
