@@ -6,6 +6,7 @@ import data from './db/data'
 import Recommended from './recommended/Recommended'
 import Card from './components/Card'
 import "./index.css";
+import { IoMdMedal } from 'react-icons/io'
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null)
@@ -57,7 +58,7 @@ function App() {
         {
           filteredData.map((item) => (
             <Card
-              key={item.id}
+              id={item.id}
               item={item}
               img={item.img}
               title={item.title}
@@ -67,7 +68,8 @@ function App() {
               prevPrice={item.prevPrice}
               newPrice={item.newPrice}
             />
-          ))}
+          ))
+        }
       </>
     );
   };

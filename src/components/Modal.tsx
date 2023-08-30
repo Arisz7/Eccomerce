@@ -1,26 +1,24 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog'
 import { IoMdClose } from 'react-icons/io';
 
 interface ModalProps {
     isOpen: boolean;
-    onChange: (open: boolean) => void;
+    onClose: (open: boolean) => void;
     title: string;
     description: string;
     children: React.ReactNode;
 }
 const Modal: React.FC<ModalProps> = ({
     isOpen,
-    onChange,
+    onClose,
     title,
     description,
     children,
 }) => {
 
-    const contentRef = useRef(false);
-
     return (
-        <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
+        <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onClose}>
             <Dialog.Portal className='card'>
                 <Dialog.Overlay className='
                 bg-neutral-900/90
@@ -31,6 +29,8 @@ const Modal: React.FC<ModalProps> = ({
                 '
                 />
                 <Dialog.Content
+
+                    onClick={(e) => e.stopPropagation()}
                     className='
             z-20
             fixed
@@ -77,6 +77,12 @@ const Modal: React.FC<ModalProps> = ({
                     </div>
                     <Dialog.Close asChild>
                         <button
+
+                            onClick={() => {
+                                onClose(false) //Usamos onClose para cerrar el modal
+
+                                console.log("Modal closed", isOpen)
+                            }}
                             className='
                      text-black
                       hover:text-gray
@@ -103,4 +109,4 @@ const Modal: React.FC<ModalProps> = ({
     );
 }
 
-export default Modal
+export default Modal;
