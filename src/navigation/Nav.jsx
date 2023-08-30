@@ -2,7 +2,6 @@ import { FiShoppingCart } from "react-icons/fi";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { CartItem } from "../products/CartItem";
 import "./Nav.css";
-import '../products/CartItem.css'
 import Modal from "../components/Modal";
 import CartContext from "../context/cart/CartContext";
 
@@ -10,11 +9,9 @@ const Nav = ({ handleInputChange, query }) => {
     const { cartItems } = useContext(CartContext)
     const [openModal, setIsOpen] = useState(false);
 
-
-    let opts = { format: '%s%v', symbol: "$" }
-
     let total = cartItems.reduce(
-        ((acc, item) => acc + item.quantity * item.newPrice), 0, opts);
+        ((acc, item) => acc + item.quantity * item.newPrice), 0);
+
 
     return (
         <nav>
@@ -44,18 +41,27 @@ const Nav = ({ handleInputChange, query }) => {
                         rounded-full grid place-items-center text-white">{cartItems.length}</span>
                     )}
                 </div>
-                <Modal title="Carrito" isOpen={openModal} onClose={() => setIsOpen(false)}>
-                    <div className="cart">
-                        <div className="cartItems">
-                            {cartItems.map((p) => (
-                                <CartItem data={p} />
-                            ))}
-                            <div className="cart-total">
-                                Cart Total: {total}
+
+                <Modal title="Shopping Cart" isOpen={openModal} onClose={() => setIsOpen(false)}>
+                    {cartItems.map((p) => (
+                        <CartItem data={p} key={p.id} />
+                    ))}
+                    {/*Sub total*/}
+
+                    <div class="h-50 rounded-lg bg-white p-6 shadow-md md:mt-0 md:w-1/3">
+                        <hr class="my-4" />
+                        {total.length !== 0 ?
+                            <div class="flex justify-between">
+                                <p class="text-lg font-bold">Total</p>
+                                <div class="">
+                                    <p class="mb-1 text-lg font-bold">${total}MX</p>
+                                </div>
                             </div>
-                        </div>
+                            : ''}
+                        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
                     </div>
                 </Modal>
+
             </button>
         </nav >
     );

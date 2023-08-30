@@ -56,10 +56,7 @@ const Modal: React.FC<ModalProps> = ({
             ' >
                     <Dialog.Title
                         className='
-                text-xl
-                text-center
-                font-semibold
-                mb-4
+                        mb-10 text-center text-2xl font-bold
                 '
                     >
 
