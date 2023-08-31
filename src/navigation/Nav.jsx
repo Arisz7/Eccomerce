@@ -41,24 +41,18 @@ const Nav = ({ handleInputChange, query }) => {
                         rounded-full grid place-items-center text-white">{cartItems.length}</span>
                     )}
                 </div>
-
                 <Modal title="Shopping Cart" isOpen={openModal} onClose={() => setIsOpen(false)}>
                     {cartItems.map((p) => (
                         <CartItem data={p} key={p.id} />
                     ))}
                     {/*Sub total*/}
-
-                    <div class="h-50 rounded-lg bg-white p-6 shadow-md md:mt-0 md:w-1/3">
-                        <hr class="my-4" />
-                        {total.length !== 0 ?
-                            <div class="flex justify-between">
-                                <p class="text-lg font-bold">Total</p>
-                                <div class="">
-                                    <p class="mb-1 text-lg font-bold">${total}MX</p>
-                                </div>
-                            </div>
-                            : ''}
-                        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Check out</button>
+                    <div class="max-w-md mx-auto  mt-0 bg-white rounded-lg overflow-hidden md:max-w-lg border border-gray-400">
+                        <div class="flex items-center justify-between px-6 py-3">
+                            <h3 class="text-gray-900 font-semibold">Total: {total}</h3>
+                            <button class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
+                                Checkout
+                            </button>
+                        </div>
                     </div>
                 </Modal>
 
