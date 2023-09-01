@@ -4,7 +4,7 @@ import tanga2 from '/tang2.jpg';
 
 const data = [
     {
-        id: 1,
+        id: 'price_1NlKvZE6e0Wxbo9SPGPlCWN9',
         img: tanga1,
         title: "Underwear",
         star: <AiFillStar className="ratings-star" />,

@@ -11,6 +11,22 @@ const Nav = ({ handleInputChange, query }) => {
     const [openModal, setIsOpen] = useState(false);
     const [show, setShow] = React.useState(true)
 
+    const checkout = async () => {
+        await fetch(`http://localhost:8080/checkout`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ items: cartItems })
+        }).then((r) => {
+            return r.json();
+        }).then((r) => {
+            if (r.url) {
+                window.location.assign(r.url); // Forwarding user to stripe
+            }
+        })
+    }
+
     let total = cartItems.reduce(
         ((acc, item) => acc + item.quantity * item.newPrice), 0);
 
@@ -63,7 +79,7 @@ const Nav = ({ handleInputChange, query }) => {
                         </div>
                     </div>
                     {
-                        total ? <button type="button" class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 w-full h-11 mt-10">
+                        total ? <button type="button" onClick={() => checkout()} class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 w-full h-11 mt-10">
                             Comprar
                         </button>
                             : null}
