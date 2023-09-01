@@ -7,7 +7,7 @@
 }
 
 .card {
-    margin: 10px;
+    margin: 15px;
     border: 2px solid #ededed;
     padding: 20px;
     background: rgba(255, 255, 255, 0.6);
@@ -15,12 +15,12 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(18.6px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.6);
 }
 
 .card-img {
     width: 13rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .card-title {

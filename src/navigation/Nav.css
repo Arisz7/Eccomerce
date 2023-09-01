@@ -2,8 +2,6 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
-    margin-left: 2rem;
 }
 
 input {
@@ -20,15 +18,16 @@ input {
 .nav-icons {
     position: relative;
     right: -500px;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: 1rem;
     margin-left: 2rem;
 }
 
 .nav-container {
     position: absolute;
     top: -4px;
-    right: 70%;
+    right: 60%;
     transform: translate(50%, 50%);
     background: #2f3640;
     height: 40px;

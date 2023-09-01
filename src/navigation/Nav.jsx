@@ -49,7 +49,9 @@ const Nav = ({ handleInputChange, query }) => {
 
                     </i>
                 </button>
+
             </div>
+
 
             <button onClick={() => setIsOpen(!openModal)} className="container-icon">
                 <div className='nav-icons'>

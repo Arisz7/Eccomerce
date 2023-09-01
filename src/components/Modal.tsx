@@ -53,7 +53,7 @@ const Modal: React.FC<ModalProps> = ({
             overflow-y-auto
             h-full 
             pt-10
-            bg-neutral-300  
+            bg-gradient-to-r from-orange-300 to-rose-300
             ' >
                     <Dialog.Title
                         className='

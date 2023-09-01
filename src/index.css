@@ -24,9 +24,7 @@
 
 
 body {
-    background-color: #f8f9d2;
-    background-image: linear-gradient(to right, rgb(243, 244, 246), rgb(209, 213, 219));
-    background-size: cover;
+    background: linear-gradient(to right, rgb(253, 186, 116), rgb(253, 164, 175));
 }
 
 * {
