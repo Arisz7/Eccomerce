@@ -40,7 +40,6 @@ const Modal: React.FC<ModalProps> = ({
             top-[50%]
             left-[50%]
             max-h-full
-            h-full
             md:h-auto
             md:max-h-[85vh]
             w-full
@@ -49,14 +48,17 @@ const Modal: React.FC<ModalProps> = ({
             translate-x-[-50%]
             translate-y-[-50%]
             rounded-md
-            bg-neutral-200
             p-[100px]
             focus:outline-none
             overflow-y-auto
+            h-full 
+            pt-10
+            bg-neutral-300  
             ' >
                     <Dialog.Title
                         className='
-                        mb-10 text-center text-2xl font-bold
+                        flex justify-start pb-5
+                        text-xl font-bold text-gray-900 sm:text-3xl text-center
                 '
                     >
 

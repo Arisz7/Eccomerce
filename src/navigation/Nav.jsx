@@ -1,5 +1,6 @@
 import { FiShoppingCart } from "react-icons/fi";
 import React, { useContext, useEffect, useRef, useState } from "react";
+import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 import { CartItem } from "../products/CartItem";
 import "./Nav.css";
 import Modal from "../components/Modal";
@@ -8,6 +9,7 @@ import CartContext from "../context/cart/CartContext";
 const Nav = ({ handleInputChange, query }) => {
     const { cartItems } = useContext(CartContext)
     const [openModal, setIsOpen] = useState(false);
+    const [show, setShow] = React.useState(true)
 
     let total = cartItems.reduce(
         ((acc, item) => acc + item.quantity * item.newPrice), 0);
@@ -41,21 +43,31 @@ const Nav = ({ handleInputChange, query }) => {
                         rounded-full grid place-items-center text-white">{cartItems.length}</span>
                     )}
                 </div>
-                <Modal title="Shopping Cart" isOpen={openModal} onClose={() => setIsOpen(false)}>
+                <Modal title="Accesorios" isOpen={openModal} onClose={() => setIsOpen(false)}>
                     {cartItems.map((p) => (
                         <CartItem data={p} key={p.id} />
                     ))}
                     {/*Sub total*/}
-                    <div class="max-w-md mx-auto  mt-0 bg-white rounded-lg overflow-hidden md:max-w-lg border border-gray-400">
-                        <div class="flex items-center justify-between px-6 py-3">
-                            <h3 class="text-gray-900 font-semibold">Total: {total}</h3>
-                            <button class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">
-                                Checkout
-                            </button>
+
+                    <div class="flex justify-between items-center mt-6 pt-6 border-t">
+                        <div class="flex items-center">
+                            <a href="/" class="flex text-lg pr-2 cursor-pointer">
+                                <BsFillArrowLeftSquareFill color="black" size={30} />
+                            </a>
+                            <span class="text-lg  font-bold text-black">Continua comprando</span>
+                        </div>
+
+                        <div class="flex justify-center items-end">
+                            <span class="text-m font-bold  mr-1">Total</span>
+                            <span class="text-lg font-bold text-gray-800 "> ${total}.00 MX</span>
                         </div>
                     </div>
+                    {
+                        total ? <button type="button" class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 w-full h-11 mt-10">
+                            Comprar
+                        </button>
+                            : null}
                 </Modal>
-
             </button>
         </nav >
     );
