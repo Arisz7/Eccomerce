@@ -24,7 +24,7 @@
 
 
 body {
-    background: linear-gradient(to right, rgb(253, 186, 116), rgb(253, 164, 175));
+    background: linear-gradient(to right, rgb(253, 186, 116), rgb(253, 164, 175)) no-repeat;
 }
 
 * {
