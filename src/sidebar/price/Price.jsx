@@ -7,7 +7,7 @@ function Price({ handleChange }) {
     return (
         <div className=''>
             <h2 className="flex justify-start pl-5 pt-7 pb-5"><ImPriceTags class='mr-2 mt-0.5' /> Price</h2>
-            <button className="flex hover:bg-white/100 pl-5 rounded-md w-full" onClick={handleChange}>All</button>
+            <button className="flex hover:bg-white/100 pl-5 p-2 rounded-md w-full" onClick={handleChange}>All</button>
             <Input
                 handleChange={handleChange}
                 value={50}

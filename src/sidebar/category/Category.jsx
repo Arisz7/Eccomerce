@@ -8,7 +8,7 @@ function Category({ handleChange }) {
         <div>
             <h2 className="flex justify-start pl-5 pt-7 pb-5"><BiSolidCategoryAlt class="mr-2 mt-0.5" /> Category</h2>
             <button
-                className="flex hover:bg-white/100 pl-5 rounded-md w-full"
+                className="flex hover:bg-white/100 pl-5 rounded-md p-2 w-full"
                 onClick={handleChange}
             >
                 All

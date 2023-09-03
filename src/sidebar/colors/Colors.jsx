@@ -8,7 +8,7 @@ function Colors({ handleChange }) {
     <>
       <div>
         <h2 className="flex justify-start pl-5 pt-7 pb-5"><VscColorMode class='mr-2 mt-0.5' /> Colors</h2>
-        <button className="flex hover:bg-white/100 pl-5 rounded-md w-full" onClick={handleChange}>All</button>
+        <button className="flex hover:bg-white/100 pl-5 p-2 rounded-md w-full" onClick={handleChange}>All</button>
         <Input
           handleChange={handleChange}
           value="black"
@@ -38,7 +38,7 @@ function Colors({ handleChange }) {
           color="green"
         />
         <button
-          className='flex text-sm font-medium hover:bg-gray-100 rounded-md w-full mb-3 pt-2 mt-2 pl-5'
+          className='flex text-sm font-medium hover:bg-gray-100 rounded-md w-full mb-3 p-2 mt-2 pl-5'
           onClick={handleChange}
           type='button'
           value="white"
