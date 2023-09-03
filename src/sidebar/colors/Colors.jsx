@@ -1,4 +1,5 @@
 import React from 'react'
+import { VscColorMode } from 'react-icons/vsc'
 import Input from '../../components/Input';
 import './Colors.css';
 
@@ -6,13 +7,8 @@ function Colors({ handleChange }) {
   return (
     <>
       <div>
-        <h2 className="sidebar-title color-title">Colors</h2>
-
-        <label className="sidebar-label-container">
-          <input onChange={handleChange} type="radio" value="" name='test2' />
-          <span className="checkmark all" ></span>All
-        </label>
-
+        <h2 className="flex justify-start pl-5 pt-7 pb-5"><VscColorMode class='mr-2 mt-0.5' /> Colors</h2>
+        <button className="flex hover:bg-white/100 pl-5 rounded-md w-full" onClick={handleChange}>All</button>
         <Input
           handleChange={handleChange}
           value="black"
@@ -41,20 +37,15 @@ function Colors({ handleChange }) {
           name="test1"
           color="green"
         />
-
-        <label className="sidebar-label-container">
-          <input
-            onChange={handleChange}
-            type='radio'
-            value="white"
-            name='test1'
-          />
-          <span
-            className='checkmark'
-            style={{ background: "white", border: "2px solid black" }}
-          ></span>
+        <button
+          className='flex text-sm font-medium hover:bg-gray-100 rounded-md w-full mb-3 pt-2 mt-2 pl-5'
+          onClick={handleChange}
+          type='button'
+          value="white"
+          name='test1'
+        >
           White
-        </label>
+        </button>
       </div>
     </>
   );

@@ -1,17 +1,13 @@
 import React from 'react'
+import { ImPriceTags } from 'react-icons/im'
 import './Price.css';
 import Input from '../../components/Input';
 
 function Price({ handleChange }) {
     return (
-        <div className='ml'>
-            <h2 className="sidebar-title price-title">Price</h2>
-
-            <label className="sidebar-label-container">
-                <input onChange={handleChange} type="radio" value="" name='test2' />
-                <span className="checkmark"></span>All
-            </label>
-
+        <div className=''>
+            <h2 className="flex justify-start pl-5 pt-7 pb-5"><ImPriceTags class='mr-2 mt-0.5' /> Price</h2>
+            <button className="flex hover:bg-white/100 pl-5 rounded-md w-full" onClick={handleChange}>All</button>
             <Input
                 handleChange={handleChange}
                 value={50}

@@ -1,15 +1,18 @@
 import React from 'react'
+import { BiSolidCategoryAlt } from 'react-icons/bi';
 import Input from '../../components/Input';
 import './Category.css';
 
 function Category({ handleChange }) {
-    return <div>
-        <h2 className="sidebar-title">Category</h2>
+    return (
         <div>
-            <label className="sidebar-label-container">
-                <input onChange={handleChange} type="radio" value="" name='test' />
-                <span className="checkmark"></span>All
-            </label>
+            <h2 className="flex justify-start pl-5 pt-7 pb-5"><BiSolidCategoryAlt class="mr-2 mt-0.5" /> Category</h2>
+            <button
+                className="flex hover:bg-white/100 pl-5 rounded-md w-full"
+                onClick={handleChange}
+            >
+                All
+            </button>
             <Input
                 handleChange={handleChange}
                 value="underwear"
@@ -35,8 +38,7 @@ function Category({ handleChange }) {
                 name="test"
             />
         </div>
-    </div>;
-
+    )
 }
 
 export default Category

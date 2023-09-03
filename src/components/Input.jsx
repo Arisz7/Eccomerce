@@ -1,12 +1,10 @@
 import React from 'react'
 
-function Input({ handleChange, value, title, name, color }) {
+function Input({ handleChange, value, title }) {
   return (
-    <label className="sidebar-label-container">
-      <input onChange={handleChange} type="radio" value={value} name={name} />
-      <span className="checkmark" style={{ backgroundColor: color }}></span>
+    <button className="flex items-center text-sm font-medium pt-2 hover:bg-white/100 rounded-md w-full mt-2 pl-5" onClick={handleChange} value={value}>
       {title}
-    </label>
+    </button>
   );
 }
 
