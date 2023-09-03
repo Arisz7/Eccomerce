@@ -6,7 +6,9 @@ import Input from '../../components/Input';
 function Price({ handleChange, collapsed }) {
     return (
         <div className=''>
-            <h2 className={`flex justify-start  mt-2 mb-2 ${collapsed && 'opacity-0 translate-x-28'}`}><ImPriceTags class='mr-2 mt-0.5' /> Price</h2>
+            {!collapsed ?
+                <h2 className={`flex justify-start  mt-2 mb-2 ${collapsed && 'opacity-0 translate-x-28'}`}><ImPriceTags class='mr-2 mt-0.5' /> Price</h2>
+                : <ImPriceTags class='mr-2 mt-0.5' size={25}/>}
             <button className={`flex hover:bg-white/100 pl-5 p-2 rounded-md w-full ${collapsed && 'opacity-0 translate-x-28'}`} onClick={handleChange}>All</button>
             <Input
                 collapsed={collapsed}
