@@ -21,8 +21,8 @@ function Recommended({ handleClick }) {
                     />
                     <Button
                         onClickHandler={handleClick}
-                        value="Nike"
-                        title="Nike"
+                        value="Vannity"
+                        title="Vannity"
                     />
                     <Button
                         onClickHandler={handleClick}

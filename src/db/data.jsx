@@ -2,6 +2,8 @@ import { AiFillStar } from "react-icons/ai"
 import tanga1 from '/tang1.jpg';
 import tanga2 from '/tang2.jpg';
 import black_bikini from '/bikini negro.jpg'
+import lenceria1 from '/lenceria1.jpg'
+import lenceria2 from '/lenceria2.jpg'
 
 const data = [
     {
@@ -14,7 +16,7 @@ const data = [
         newPrice: "200",
         company: "Victoria Secret's",
         color: "black",
-        category: "underwear",
+        category: "lenceria",
         quantity: 1
     },
 
@@ -28,7 +30,7 @@ const data = [
         newPrice: "200",
         company: "Victoria Secret's",
         color: "red",
-        category: "underwear",
+        category: "lenceria",
         quantity: 1
     },
     {
@@ -39,35 +41,35 @@ const data = [
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "200",
-        company: "Victoria Secret's",
+        company: "Vannity",
         color: "black",
-        category: "underwear",
+        category: "bikini",
         quantity: 1
     },
     {
         id: 4,
-        img: "https://m.media-amazon.com/images/I/51+P9uAvb1L._AC_UY695_.jpg",
-        title: "Nike Waffle One Sneaker",
+        img: lenceria1,
+        title: "Transparente acorazonado",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "200",
-        company: "Nike",
-        color: "green",
-        category: "sneakers",
+        company: "Vannity",
+        color: "black",
+        category: "bikini",
         quantity: 1
     },
     {
         id: 5,
-        img: "https://m.media-amazon.com/images/I/71oEKkghg-L._AC_UX575_.jpg",
-        title: "Nike Running Shoe",
+        img: lenceria2,
+        title: "Bikini rojo",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "200",
-        company: "Adidas",
-        color: "black",
-        category: "sneakers",
+        company: "Vannity",
+        color: "red",
+        category: "bikini",
         quantity: 1
     },
     {

@@ -1,10 +1,10 @@
 .recommended-flex {
     display: flex;
-    margin-left: 20rem;
+    margin-left: 23rem;
 }
 
 .recommended-title {
-    margin-left: 20rem;
+    margin-left: 23rem;
     margin-bottom: 20px;
     margin-top: 20px;
     font-size: 20px;
@@ -14,7 +14,7 @@
 
 .btns {
     /* padding: 10px 20px;
-    margin-right: 6px;
+   
     background: transparent;
     border: none;
     border: 0.6px solid #ccc;
@@ -25,13 +25,13 @@
     margin: 10px;
     font-family: Trebuchet;
     padding: 10px 20px;
-    text-align: center;
+    text-align: end;
     transition: 0.5s;
     background-size: 200% auto;
     color: white;
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    display: block;
+    display: flex;
 }
 
 .btns:hover {

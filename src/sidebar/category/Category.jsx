@@ -9,7 +9,7 @@ function Category({ handleChange, collapsed }) {
 
     return <>
 
-        {!collapsed ?
+       
             <div className={`flex justify-start mt-2 mb-2 ${collapsed && 'opacity-0 translate-x-28'}`}><BiSolidCategoryAlt class="mr-2 mt-0.5" />
                 <button className="flex right" onClick={() => setIsOpen((prev) => !prev)}>
                     Category
@@ -20,8 +20,6 @@ function Category({ handleChange, collapsed }) {
                 </button>
 
             </div>
-            : <BiSolidCategoryAlt size={25} className='mb-20'/>
-        }
 
         {IsOpen && (
             <button
@@ -38,8 +36,8 @@ function Category({ handleChange, collapsed }) {
                 IsOpen={IsOpen}
                 collapsed={collapsed}
                 handleChange={handleChange}
-                value="underwear"
-                title="Underwear"
+                value="lenceria"
+                title="Lenceria"
                 name="test"
             />
         )}
@@ -47,8 +45,8 @@ function Category({ handleChange, collapsed }) {
             <Input
                 collapsed={collapsed}
                 handleChange={handleChange}
-                value="sneakers"
-                title="Sneakers"
+                value="bikini"
+                title="Bikini"
                 name="test"
             />
         )}

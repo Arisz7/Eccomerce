@@ -8,7 +8,6 @@ function Price({ handleChange, collapsed }) {
     const [IsOpen, setIsOpen] = useState(false);
     return (
         <div className=''>
-            {!collapsed ?
                 <div className={`flex justify-start mt-4 mb-2 ${collapsed && 'opacity-0 translate-x-28'}`}><ImPriceTags class='mr-2 mt-0.5' />
                     <button className="flex right" onClick={() => setIsOpen((prev) => !prev)}>
                         Price
@@ -18,7 +17,6 @@ function Price({ handleChange, collapsed }) {
                         )}
                     </button>
                 </div>
-                : <ImPriceTags class='' size={25} />}
             {IsOpen && (
                 <button className={`flex hover:bg-white/100 pl-5 p-2 rounded-md w-full ${collapsed && 'opacity-0 translate-x-28'}`} onClick={handleChange}>All</button>
             )}
