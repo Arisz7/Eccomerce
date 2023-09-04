@@ -1,27 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BiSolidCategoryAlt } from 'react-icons/bi';
 import Input from '../../components/Input';
 import './Category.css';
+import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai';
 
 function Category({ handleChange, collapsed }) {
-    return (
-        <div>
-            {!collapsed ?
-                <h2 className={`flex justify-start mt-2 mb-2 ${collapsed && 'opacity-0 translate-x-28'}`}><BiSolidCategoryAlt class="mr-2 mt-0.5" /> Category</h2>
-                : <BiSolidCategoryAlt size={25} />}
+    const [IsOpen, setIsOpen] = useState(false);
+
+    return <>
+
+        {!collapsed ?
+            <div className={`flex justify-start mt-2 mb-2 ${collapsed && 'opacity-0 translate-x-28'}`}><BiSolidCategoryAlt class="mr-2 mt-0.5" />
+                <button className="flex right" onClick={() => setIsOpen((prev) => !prev)}>
+                    Category
+                    {!IsOpen ? (<AiOutlineCaretDown className='flex h-8 ml-2 pb-2' />
+                    ) : (
+                        <AiOutlineCaretUp className='h-8  ml-2 pb-2' />
+                    )}
+                </button>
+
+            </div>
+            : <BiSolidCategoryAlt size={25} className='mb-20'/>
+        }
+
+        {IsOpen && (
             <button
                 className={`flex hover:bg-white/100 pl-5 rounded-md p-2 w-full ${collapsed && 'opacity-0 translate-x-28'}`}
                 onClick={handleChange}
             >
                 All
             </button>
+        )}
+
+        {IsOpen && (
             <Input
+                className="font-semibold"
+                IsOpen={IsOpen}
                 collapsed={collapsed}
                 handleChange={handleChange}
                 value="underwear"
                 title="Underwear"
                 name="test"
             />
+        )}
+        {IsOpen && (
             <Input
                 collapsed={collapsed}
                 handleChange={handleChange}
@@ -29,6 +51,8 @@ function Category({ handleChange, collapsed }) {
                 title="Sneakers"
                 name="test"
             />
+        )}
+        {IsOpen && (
             <Input
                 collapsed={collapsed}
                 handleChange={handleChange}
@@ -36,6 +60,8 @@ function Category({ handleChange, collapsed }) {
                 title="Heels"
                 name="test"
             />
+        )}
+        {IsOpen && (
             <Input
                 collapsed={collapsed}
                 handleChange={handleChange}
@@ -43,8 +69,8 @@ function Category({ handleChange, collapsed }) {
                 title="Flats"
                 name="test"
             />
-        </div>
-    )
+        )}
+    </>
 }
 
 export default Category
