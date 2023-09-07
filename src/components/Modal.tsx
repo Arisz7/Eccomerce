@@ -83,6 +83,7 @@ const Modal: React.FC<ModalProps> = ({
                                 console.log("Modal closed", isOpen)
                             }}
                             className='
+                
                      text-black
                       hover:text-gray
                       absolute

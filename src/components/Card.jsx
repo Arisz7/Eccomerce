@@ -7,7 +7,7 @@ const Card = ({ item }) => {
 
     return (
         <>
-            <section className="card">
+            <section className="block rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] card">
                 <img src={item.img} alt={item.title} className="card-img" />
                 <div className="card-details">
                     <h3 className="card-title">{item.title}</h3>
