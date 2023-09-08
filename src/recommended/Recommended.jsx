@@ -8,7 +8,7 @@ function Recommended({ handleClick }) {
         <>
             <div>
                 <h2 className='recommended-title'>Recomendado</h2>
-                <div className="recommended-flex">
+                <div className="recommended-flex hidden md:flex font-semibold text-white">
                     <Button
                         onClickHandler={handleClick}
                         value=""

@@ -7,8 +7,8 @@ const Card = ({ item }) => {
 
     return (
         <>
-            <section className="block rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] card">
-                <img src={item.img} alt={item.title} className="card-img" />
+            <section className="flex flex-col rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-white/50 card">
+                <img src={item.img} alt={item.title} className="card-img rounded-lg" />
                 <div className="card-details">
                     <h3 className="card-title">{item.title}</h3>
                     <section className="card-reviews">

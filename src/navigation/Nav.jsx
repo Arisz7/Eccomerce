@@ -5,11 +5,12 @@ import { CartItem } from "../products/CartItem";
 import "./Nav.css";
 import Modal from "../components/Modal";
 import CartContext from "../context/cart/CartContext";
+import useWindowDimensions from "../hooks/useWindowDimension";
 
 const Nav = ({ handleInputChange, query }) => {
     const { cartItems } = useContext(CartContext)
     const [openModal, setIsOpen] = useState(false);
-    const [show, setShow] = React.useState(true)
+    const { width, height } = useWindowDimensions()
 
     const checkout = async () => {
         await fetch(`http://localhost:8080/checkout`, {
@@ -41,7 +42,7 @@ const Nav = ({ handleInputChange, query }) => {
                     value={query}
                     placeholder="Buscar"
                 />
-                <button className="search-btn" href="#">
+                <button className="search-btn hidden md:flex" href="#">
                     <i>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -54,7 +55,7 @@ const Nav = ({ handleInputChange, query }) => {
 
 
             <button onClick={() => setIsOpen(!openModal)} className="container-icon">
-                <div className='nav-icons'>
+                <div className='nav-icons pt-2'>
                     <FiShoppingCart size={25} />
                     {cartItems.length > 0 && (
                         <span className="absolute -top-2 -right-2 text-[13px] bg-red-600 h-[18px] w-[18px]
