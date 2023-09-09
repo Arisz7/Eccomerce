@@ -7,24 +7,25 @@ const Card = ({ item }) => {
 
     return (
         <>
-            <section className="card p-5 m-5 min-w-[400px] lg:items-center lg:min-w-[200px] lg:p-5 lg:m-5 rounded-lg">
-                <img src={item.img} alt={item.title} className="card-img min-w-[340px] lg:min-w-[200px] "/>
-                <div className="card-details">
-                    <h3 className="card-title">{item.title}</h3>
-                    <section className="card-reviews">
-                        {item.star} {item.star} {item.star} {item.star}
-                        <span className="total-reviews">{item.reviews}</span>
-                    </section>
-                    <section className="card-price">
-                        <div className="price">
-                            <del>{item.prevPrice}</del> {item.newPrice}
+            <section
+                class="w-fit mx-auto grid grid-cols-3 lg:grid-cols-1 md:grid-cols-2 justify-items-center justify-center gap-y-20 lg:p-2 gap-x-14 mt-10 mb-5">
+                <div class="w-72 -z-20 card shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                        <img src={item.img}
+                            alt={item.title} class="card-img w-72 rounded-lg p-6" />
+                        <div class="px-4 py-3 w-72">
+                            <p class="text-lg font-bold text-black truncate block capitalize">{item.title}</p>
+                            <div class="flex items-center">
+                                <p class="text-lg font-semibold text-black cursor-auto my-3">${item.newPrice}</p>
+                                <del>
+                                    <p class="text-lg text-gray-600 cursor-auto ml-2">${item.prevPrice}</p>
+                                </del>
+                                <button onClick={() => addToCart(item)} className="check-out ml-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-                        <button onClick={() => addToCart(item)} className="check-out">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                            </svg>
-                        </button>
-                    </section>
                 </div>
             </section>
         </>

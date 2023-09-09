@@ -8,7 +8,7 @@ function Price({ handleChange, collapsed }) {
     const [IsOpen, setIsOpen] = useState(false);
     return (
         <div className=''>
-                <div className={`flex justify-start mt-4 mb-2 ${collapsed && 'opacity-0 translate-x-28'}`}><ImPriceTags class='mr-2 mt-0.5' />
+                <div className={`flex justify-start mt-4 mb-2 text-2xl lg:text-lg`}><ImPriceTags class='mr-2 mt-0.5' />
                     <button className="flex right" onClick={() => setIsOpen((prev) => !prev)}>
                         Price
                         {!IsOpen ? (<AiOutlineCaretDown className='flex h-8 ml-2 pb-2' />
