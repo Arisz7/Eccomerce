@@ -12,8 +12,6 @@ function Sidebar({ handleChange }) {
   const [shown, setIsShown] = useState(false)
   const { width, height } = useWindowDimensions()
 
-  console.log(width, height)
-
   const handleOnChange = () => {
     setIsShown(shown => !shown)
   }

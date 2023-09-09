@@ -10,7 +10,7 @@ function Category({ handleChange, collapsed }) {
     return <>
 
 
-        <div className={`flex justify-start mt-2 mb-2 whitespace-pre text-2xl lg:text-lg`}><BiSolidCategoryAlt class="mr-2 mt-0.5" />
+        <div className={`flex justify-start mt-2 mb-2 whitespace-pre text-2xl lg:text-lg`}><BiSolidCategoryAlt className="mr-2 mt-0.5" />
             <button className="flex right" onClick={() => setIsOpen((prev) => !prev)}>
                 Category
                 {!IsOpen ? (<AiOutlineCaretDown className='flex h-8 ml-2 pb-2' />

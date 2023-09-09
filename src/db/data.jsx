@@ -4,6 +4,14 @@ import tanga2 from '/tang2.jpg';
 import black_bikini from '/bikini negro.jpg'
 import lenceria1 from '/lenceria1.jpg'
 import lenceria2 from '/lenceria2.jpg'
+import lenceria3 from '/lenceria3.jpg'
+import lenceria4 from '/lenceria4.jpg'
+import lenceria5 from '/lenceria5.jpg'
+import lenceria6 from '/lenceria6.jpg'
+import lenceria7 from '/lenceria7.jpg'
+import lenceria8 from '/lenceria8.jpg'
+import underwear_encaje from '/underwear-encaje.jpg'
+import underwear_normal from '/underwear-normal.jpg'
 
 const data = [
     {
@@ -74,110 +82,110 @@ const data = [
     },
     {
         id: 6,
-        img: "https://m.media-amazon.com/images/I/41M54ztS6IL._AC_SY625._SX._UX._SY._UY_.jpg",
-        title: "Flat Slip On Pumps",
+        img: lenceria3,
+        title: "Bustier top (Encaje)",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "200",
-        company: "Vans",
-        color: "green",
-        category: "flats",
+        company: "Vannity",
+        color: "red",
+        category: "top",
         quantity: 1
     },
     {
         id: 7,
-        img: "https://m.media-amazon.com/images/I/71zKuNICJAL._AC_UX625_.jpg",
-        title: "Knit Ballet Flat",
+        img: lenceria4,
+        title: "Bustier top",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "50",
-        company: "Adidas",
-        color: "black",
-        category: "flats",
+        company: "Vannity",
+        color: "red",
+        category: "top",
         quantity: 1
     },
 
     {
         id: 8,
-        img: "https://m.media-amazon.com/images/I/61V9APfz97L._AC_UY695_.jpg",
-        title: "Loafer Flats",
+        img: lenceria5,
+        title: "Bustier Top",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "50",
-        company: "Vans",
-        color: "white",
-        category: "flats",
+        company: "Vannity",
+        color: "black",
+        category: "top",
         quantity: 1
     },
 
     {
         id: 9,
-        img: "https://m.media-amazon.com/images/I/71VaQ+V6XnL._AC_UY695_.jpg",
-        title: "Nike Zoom Freak",
+        img: lenceria6,
+        title: "Bustier top",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "200",
-        company: "Nike",
-        color: "green",
-        category: "sneakers",
+        company: "Vannity",
+        color: "white",
+        category: "top",
         quantity: 1
     },
 
     {
         id: 10,
-        img: "https://m.media-amazon.com/images/I/61-cBsLhJHL._AC_UY695_.jpg",
-        title: "Nike Men's Sneaker",
+        img: lenceria7,
+        title: "Conjunto encaje",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "200",
-        company: "Adidas",
-        color: "blue",
-        category: "sneakers",
+        company: "Vannity",
+        color: "white",
+        category: "top",
         quantity: 1
     },
 
     {
         id: 11,
-        img: "https://m.media-amazon.com/images/I/81xXDjojYKS._AC_UX575_.jpg",
-        title: "PUMA BLACK-OCE",
+        img: lenceria8,
+        title: "Conjunto encaje",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "150",
         company: "Puma",
-        color: "green",
+        color: "blue",
         category: "sneakers",
         quantity: 1
     },
     {
         id: 12,
-        img: "https://m.media-amazon.com/images/I/71E75yRwCDL._AC_UY575_.jpg",
-        title: "Pacer Future Sneaker",
+        img: underwear_encaje,
+        title: "Kit Underwear (Encaje)",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "150",
-        company: "Puma",
-        color: "red",
-        category: "sneakers",
+        company: "Victoria Secret's",
+        color: "all",
+        category: "Kit",
         quantity: 1
     },
     {
         id: 13,
-        img: "https://m.media-amazon.com/images/I/71jeoX0rMBL._AC_UX575_.jpg",
-        title: "Unisex-Adult Super",
+        img: underwear_normal,
+        title: "Kit Underwear",
         star: <AiFillStar className="ratings-star" />,
         reviews: "(123 reviews)",
         prevPrice: "$140,00",
         newPrice: "150",
-        company: "Puma",
-        color: "black",
-        category: "sneakers",
+        company: "Victoria Secret's",
+        color: "all",
+        category: "Kit",
         quantity: 1
     },
     {
