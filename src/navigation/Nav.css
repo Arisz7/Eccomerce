@@ -102,3 +102,9 @@ input {
     width: 80%;
     /* Could be more or less, depending on screen size */
 }
+
+#shoppingCar {
+    position: absolute;
+    right: 15cm;
+    margin-top: 0.5cm;
+}

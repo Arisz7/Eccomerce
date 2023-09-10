@@ -22,15 +22,6 @@ function Category({ handleChange, collapsed }) {
         </div>
 
         {IsOpen && (
-            <button
-                className={`flex hover:bg-white/100 pl-5 rounded-md p-2 w-full ${collapsed && 'opacity-0 translate-x-28'}`}
-                onClick={handleChange}
-            >
-                All
-            </button>
-        )}
-
-        {IsOpen && (
             <Input
                 className="font-semibold"
                 IsOpen={IsOpen}

@@ -22,7 +22,7 @@ function Sidebar({ handleChange }) {
       className={`flex fixed rounded-lg h-full lg:h-screen px-4 py-8 overflow-y-auto bg-white/50 duration-500`}
     >
       <div style={{ display: !shown && height >= 236 && height < 342 ? "hidden" : "visible" }} className='flex flex-col gap-1 pt-10 ml-10 font-medium'>
-        <img src={logo} className='mb-16 h-[170px] w-[170px] rounded-[46%] bg-black' alt="vannityHMO" />
+        <img src={logo} className='mb-10 h-[170px] w-[170px] rounded-[46%] bg-black' alt="vannityHMO" />
         <Category handleChange={handleChange} shown={shown} />
         <Price handleChange={handleChange} shown={shown} />
         <Color handleChange={handleChange} shown={shown} />

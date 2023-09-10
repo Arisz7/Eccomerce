@@ -13,7 +13,7 @@ const Card = ({ item }) => {
         <>
             <div
                 class="mx-auto mb-10">
-                <div class="w-72 -z-20 card shadow-md rounded-xl duration-500 hover:scale-[1.2] hover:shadow-xl">
+                <div class="lg:flex-col flex hover:bg-black/50 bg-white/50 lg:w-65 -z-20 shadow-md rounded-xl duration-500 hover:scale-[1.2] hover:shadow-xl">
                     <img src={item.img}
                         alt={item.title} class="card-img w-72 rounded-lg p-6" />
                     <div class="px-4 py-3 w-72">

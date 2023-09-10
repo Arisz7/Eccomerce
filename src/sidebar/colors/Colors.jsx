@@ -8,7 +8,7 @@ function Colors({ handleChange, collapsed }) {
   const [IsOpen, setIsOpen] = useState(false);
   return (
     <>
-        <div className={`flex justify-start mt-4 mb-2 text-2xl lg:text-lg`}><VscColorMode class='mr-2 mt-0.5' />
+        <div className={`flex justify-start mt-4  text-2xl lg:text-lg`}><VscColorMode class='mr-2 mt-0.5' />
           <button className="flex right" onClick={() => setIsOpen((prev) => !prev)}>
             Colors
             {!IsOpen ? (<AiOutlineCaretDown className='flex h-8 ml-2 pb-2' />
@@ -17,10 +17,6 @@ function Colors({ handleChange, collapsed }) {
             )}
           </button>
         </div>
-      
-      {IsOpen && (
-        <button className={`flex hover:bg-white/100 pl-5 p-2 rounded-md w-full ${collapsed && 'opacity-0 translate-x-28'}`} onClick={handleChange}>All</button>
-      )}
 
       {IsOpen && (
         <Input

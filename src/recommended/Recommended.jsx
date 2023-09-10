@@ -8,9 +8,9 @@ function Recommended({ handleClick }) {
         <>
             <div>
                 <div class="recommended-title">
-                    <h1 class="font-bold text-3xl mb-4">Recomendado</h1>
+                    <h1 class="font-bold text-3xl mb-10">Recomendado</h1>
                 </div>
-                <div className="recommended-flex hidden md:flex font-semibold text-white">
+                <div className="recommended-flex hidden md:flex font-semibold text-white mb-20 text-lg">
                     <Button
                         onClickHandler={handleClick}
                         value=""
@@ -28,8 +28,8 @@ function Recommended({ handleClick }) {
                     />
                     <Button
                         onClickHandler={handleClick}
-                        value="Adidas"
-                        title="Adidas"
+                        value="Kit"
+                        title="Kit"
                     />
                     <Button
                         onClickHandler={handleClick}

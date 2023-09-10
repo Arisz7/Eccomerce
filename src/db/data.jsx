@@ -144,7 +144,7 @@ const data = [
         prevPrice: "$140,00",
         newPrice: "200",
         company: "Vannity",
-        color: "white",
+        color: "black",
         category: "top",
         quantity: 1
     },
