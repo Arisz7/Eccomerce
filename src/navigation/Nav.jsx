@@ -2,15 +2,16 @@ import { FiShoppingCart } from "react-icons/fi";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs'
 import { CartItem } from "../products/CartItem";
+import shoppingCar from "/shoppingcar.png"
 import "./Nav.css";
 import Modal from "../components/Modal";
 import CartContext from "../context/cart/CartContext";
-import useWindowDimensions from "../hooks/useWindowDimension";
+
 
 const Nav = ({ handleInputChange, query }) => {
     const { cartItems } = useContext(CartContext)
     const [openModal, setIsOpen] = useState(false);
-   
+
 
     const checkout = async () => {
         await fetch(`http://localhost:8080/checkout`, {
@@ -33,60 +34,60 @@ const Nav = ({ handleInputChange, query }) => {
 
 
     return <>
-
-        <div className="nav-container">
-            <input
-                className="search-input"
-                type="text"
-                onChange={handleInputChange}
-                value={query}
-                placeholder="Buscar"
-            />
-            <button className="search-btn hidden md:flex" href="#">
-                <i>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                    </svg>
-
-                </i>
-            </button>
-
-        </div>
+        <nav className="p-4">
+            <div className="nav-container">
+                <input
+                    className="search-input"
+                    type="text"
+                    onChange={handleInputChange}
+                    value={query}
+                    placeholder="Buscar"
+                />
+                <button className="search-btn hidden md:flex" href="#">
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                        </svg>
+                    </i>
+                </button>
+            </div>
 
 
-        <button onClick={() => setIsOpen(!openModal)} className="">
-                <FiShoppingCart  className="" id="shoppingCar" size={25} />
-                {cartItems.length > 0 && (
-                    <span className="fixed text-[13px] bg-red-600 h-[18px] w-[18px]
+            <button onClick={() => setIsOpen(!openModal)}>
+                <div className="lg:absolute lg:top-10 lg:pr-20 fixed bottom-10 right-10 mb-20 mr-3">
+                    <img src={shoppingCar} alt="ShoppinCar" class="lg:h-8 lg:w-8 w-7 h-7 items center z-90" />
+                    {cartItems.length > 0 && (
+                        <span className="fixed lg:flex lg:top-10 bottom-35 lg:pl-1  items-center text-[13px] bg-red-600 h-[18px] w-[18px]
                         rounded-full text-white">{cartItems.length}</span>
-                )}
-            <Modal title="Accesorios" isOpen={openModal} onClose={() => setIsOpen(false)}>
-                {cartItems.map((p) => (
-                    <CartItem data={p} key={p.id} />
-                ))}
-
-                {/*Sub total*/}
-
-                <div class="flex justify-between items-center mt-6 pt-6 border-t">
-                    <div class="flex items-center">
-                        <a href="/" class="flex text-lg pr-2 cursor-pointer">
-                            <BsFillArrowLeftSquareFill color="black" size={30} />
-                        </a>
-                        <span class="text-lg  font-bold text-black">Continua comprando</span>
-                    </div>
-
-                    <div class="flex justify-center items-end">
-                        <span class="text-m font-bold  mr-1">Total</span>
-                        <span class="text-lg font-bold text-gray-800 "> ${total}.00 MX</span>
-                    </div>
+                    )}
                 </div>
-                {
-                    total ? <button type="button" onClick={() => checkout()} class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 w-full h-11 mt-10">
-                        Comprar
-                    </button>
-                        : null}
-            </Modal>
-        </button>
+                <Modal title="Accesorios" isOpen={openModal} onClose={() => setIsOpen(false)}>
+                    {cartItems.map((p) => (
+                        <CartItem data={p} key={p.id} />
+                    ))}
+
+                    {/*Sub total*/}
+                    <div class="flex justify-between items-center mt-6 pt-6 border-t">
+                        <div class="flex items-center">
+                            <a href="/" class="flex text-lg pr-2 cursor-pointer">
+                                <BsFillArrowLeftSquareFill color="black" size={30} />
+                            </a>
+                            <span class="text-lg  font-bold text-black">Continua comprando</span>
+                        </div>
+
+                        <div class="flex justify-center items-end">
+                            <span class="text-m font-bold  mr-1">Total</span>
+                            <span class="text-lg font-bold text-gray-800 "> ${total}.00 MX</span>
+                        </div>
+                    </div>
+                    {
+                        total ? <button type="button" onClick={() => checkout()} class="text-white bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:outline-none focus:ring-[#050708]/50 font-medium rounded-lg text-md px-5 py-2.5 text-center inline-flex items-center justify-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2 mb-2 w-full h-11 mt-10">
+                            Comprar
+                        </button>
+                            : null}
+                </Modal>
+            </button>
+        </nav>
     </>
 };
 

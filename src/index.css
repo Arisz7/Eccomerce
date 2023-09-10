@@ -8,7 +8,7 @@
 
 
 body {
-    background: linear-gradient(to right, rgb(253, 186, 116), rgb(253, 164, 175)) no-repeat;
+    background-image: url('/background.jpg');
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -17,17 +17,6 @@ body {
     height: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        background: linear-gradient(to right, rgb(253, 186, 116), rgb(253, 164, 175)) no-repeat center center;
-        background-attachment: fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        height: 100%;
-    }
-}
 
 * {
     padding: 0;

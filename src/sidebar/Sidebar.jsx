@@ -19,7 +19,7 @@ function Sidebar({ handleChange }) {
   return <>
     <div
       style={{ width: !shown && width >= 360 && width < 1920 ? '0px' : "300px" }}
-      className={`flex fixed rounded-lg h-full lg:h-screen px-4 py-8 overflow-y-auto bg-white/50 duration-500`}
+      className={`fixed rounded-lg h-full px-4 py-8 overflow-y-auto bg-white/50 duration-500`}
     >
       <div style={{ display: !shown && height >= 236 && height < 342 ? "hidden" : "visible" }} className='flex flex-col gap-1 pt-10 ml-10 font-medium'>
         <img src={logo} className='mb-10 h-[170px] w-[170px] rounded-[46%] bg-black' alt="vannityHMO" />

@@ -12,12 +12,12 @@ const Card = ({ item }) => {
     return (
         <>
             <div
-                class="mx-auto mb-10">
-                <div class="lg:flex-col flex hover:bg-black/50 bg-white/50 lg:w-65 -z-20 shadow-md rounded-xl duration-500 hover:scale-[1.2] hover:shadow-xl">
+                class="mx-auto mb-10 fles justify-center">
+                <div class="lg:flex-col flex w-[500px] hover:bg-black/50 bg-white/50 lg:w-[250px] -z-20 shadow-md rounded-xl duration-500 lg:hover:scale-[1.2] hover:shadow-xl">
                     <img src={item.img}
                         alt={item.title} class="card-img w-72 rounded-lg p-6" />
                     <div class="px-4 py-3 w-72">
-                        <p class="text-lg font-bold text-black truncate block capitalize">{item.title}</p>
+                        <p class="text-base font-bold text-black truncate block capitalize">{item.title}</p>
                         <div class="flex items-center">
                             <p class="text-lg font-semibold text-black cursor-auto my-3">${item.newPrice}</p>
                             <del>
