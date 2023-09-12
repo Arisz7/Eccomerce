@@ -4,7 +4,7 @@ import Input from '../../components/Input';
 import './Category.css';
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai';
 
-function Category({ handleChange, collapsed }) {
+function Category({ handleChange}) {
     const [IsOpen, setIsOpen] = useState(false);
 
     return <>
@@ -24,8 +24,7 @@ function Category({ handleChange, collapsed }) {
         {IsOpen && (
             <Input
                 className="font-semibold"
-                IsOpen={IsOpen}
-                collapsed={collapsed}
+                IsOpen={IsOpen} 
                 handleChange={handleChange}
                 value="lenceria"
                 title="Lenceria"
@@ -34,7 +33,6 @@ function Category({ handleChange, collapsed }) {
         )}
         {IsOpen && (
             <Input
-                collapsed={collapsed}
                 handleChange={handleChange}
                 value="bikini"
                 title="Bikini"
@@ -43,7 +41,6 @@ function Category({ handleChange, collapsed }) {
         )}
         {IsOpen && (
             <Input
-                collapsed={collapsed}
                 handleChange={handleChange}
                 value="heels"
                 title="Heels"
@@ -52,7 +49,6 @@ function Category({ handleChange, collapsed }) {
         )}
         {IsOpen && (
             <Input
-                collapsed={collapsed}
                 handleChange={handleChange}
                 value="flats"
                 title="Flats"
