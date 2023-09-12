@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --after-content: '2';
+#root {
+    height: 100vh;
 }
-
 
 body {
     background-image: url('/background.jpg');
@@ -14,25 +13,9 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    height: 100%;
-}
-
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: rgb(97, 97, 97);
-}
-
-li {
-    list-style: none;
-}
 
 /* width */
 ::-webkit-scrollbar {

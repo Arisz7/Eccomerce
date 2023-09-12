@@ -52,26 +52,25 @@ function App() {
       );
     }
 
-    return (
-      <>
-        {
-          filteredData.map((item) => (
-            <Card
-              key={item.id}
-              id={item.id}
-              item={item}
-              img={item.img}
-              title={item.title}
-              star={item.star}
-              reviews={item.reviews}
-              quantity={item.quantity}
-              prevPrice={item.prevPrice}
-              newPrice={item.newPrice}
-            />
-          ))
-        }
-      </>
-    );
+    return <>
+
+      {
+        filteredData.map((item) => (
+          <Card
+            key={item.id}
+            id={item.id}
+            item={item}
+            img={item.img}
+            title={item.title}
+            star={item.star}
+            reviews={item.reviews}
+            quantity={item.quantity}
+            prevPrice={item.prevPrice}
+            newPrice={item.newPrice}
+          />
+        ))
+      }
+    </>
   };
 
   const result = filteredProducts(data, selectedCategory, query);

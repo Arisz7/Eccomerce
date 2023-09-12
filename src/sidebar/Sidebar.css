@@ -17,3 +17,9 @@
     -webkit-border-radius: 50%;
     border-radius: 48%;
 }
+
+#sideBar {
+    background-image: linear-gradient(to right, #000000 0%, #434343 50%, #000000 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 20px #eee;
+}

@@ -6,6 +6,7 @@ import logo from '/vannityhmo-modified.png'
 import './Sidebar.css';
 import { FcLike } from 'react-icons/fc';
 import useWindowDimensions from '../hooks/useWindowDimension';
+import { NavItem } from 'react-bootstrap';
 
 
 function Sidebar({ handleChange }) {
@@ -16,22 +17,11 @@ function Sidebar({ handleChange }) {
     setIsShown(shown => !shown)
   }
 
-  return <>
-    <div
-      style={{ width: !shown && width >= 360 && width < 1920 ? '0px' : "300px" }}
-      className={`fixed rounded-lg h-full px-4 py-8 overflow-y-auto bg-white/50 duration-500`}
-    >
-      <div style={{ display: !shown && height >= 236 && height < 342 ? "hidden" : "visible" }} className='flex flex-col gap-1 pt-10 ml-10 font-medium'>
-        <img src={logo} className='mb-10 h-[170px] w-[170px] rounded-[46%] bg-black' alt="vannityHMO" />
-        <Category handleChange={handleChange} shown={shown} />
-        <Price handleChange={handleChange} shown={shown} />
-        <Color handleChange={handleChange} shown={shown} />
-      </div>
+  return (
+    <div>
+      
     </div>
-    <button className={`fixed lg:hidden bg-white/50 z-90 justify-center items-center bottom-10 right-10 w-10 h-10 rounded-full drop-shadow-lg flex duration-500`} onClick={handleOnChange}>
-      <FcLike size={26} className='cursor-pointer' />
-    </button>
-  </>
+  )
 }
 
 export default Sidebar
