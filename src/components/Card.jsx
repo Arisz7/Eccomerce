@@ -17,7 +17,7 @@ const Card = ({ item }) => {
                     <div class="relative pt-10 px-10 flex items-center justify-center">
                         <div class="block absolute bottom-0 left-0 -mb-24 ml-3">
                         </div>
-                        <img class="relative h-[250px] w-[210px]" src={item.img} alt="" />
+                        <img class="relative h-[250px] w-[210px] lg:h-[250px] lg:w-[210px]" src={item.img} alt="" />
                     </div>
                     <div class="relative text-black text-xl px-6 pb-6 mt-6">
                         <span class="block font-semibold mb-4">{item.title}</span>
