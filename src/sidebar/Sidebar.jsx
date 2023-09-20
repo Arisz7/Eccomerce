@@ -16,19 +16,24 @@ function Sidebar({ handleChange }) {
     setIsShown(shown => !shown)
   }
 
+  console.log(height)
+
   return (
-    <div style={{
-      width: !shown && width >= 360 && width < 1920 ? '0px' : "300px",
-      display: !shown && width >= 360 && width < 1920 ? 'hidden' : "visible"
-    }}
-      className='fixed h-full w-72 pt-20 justify-center bg-black/50'>
-      <img className='flex ml-6 w-[200px] h-[200px]' src={logo} alt="" />
-        <Category handleChange={handleChange} shown={shown} />
-        <Price handleChange={handleChange} shown={shown} />
-        <Color handleChange={handleChange} shown={shown} />
-      <button className={`fixed lg:hidden bg-white/50 z-90 justify-center items-center bottom-10 right-10 w-10 h-10 rounded-full drop-shadow-lg flex duration-500`} onClick={handleOnChange}>
-        <FcLike size={26} className='cursor-pointer' />
-      </button>
+    <div className='fixed bottom-0 left-0 z-50 w-full h-16 bg-black/50 border-t'>
+      <div className='grid h-full max-w-lg grid-cols-4 mx-auto'>
+        <button type="button" className='inline-flex flex-col items-center justify-center px-5 hover:bg-white/50 group'>
+          <span><Category handleChange={handleChange} shown={shown} /></span>
+        </button>
+        <button type="button">
+          <span>Wallet</span>
+        </button>
+        <button type="button">
+          <span>Settings</span>
+        </button>
+        <button type="button">
+          <span>Profile</span>
+        </button>
+      </div>
     </div>
   )
 }

@@ -9,7 +9,6 @@ import "./index.css";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null)
-  const { productItems } = data
   // ------- Input Filter --------
   const [query, setQuery] = useState("")
 
@@ -56,18 +55,18 @@ function App() {
 
       {
         filteredData.map((item) => (
-          <Card
-            key={item.id}
-            id={item.id}
-            item={item}
-            img={item.img}
-            title={item.title}
-            star={item.star}
-            reviews={item.reviews}
-            quantity={item.quantity}
-            prevPrice={item.prevPrice}
-            newPrice={item.newPrice}
-          />
+            <Card
+              key={item.id}
+              id={item.id}
+              item={item}
+              img={item.img}
+              title={item.title}
+              star={item.star}
+              reviews={item.reviews}
+              quantity={item.quantity}
+              prevPrice={item.prevPrice}
+              newPrice={item.newPrice}
+            />
         ))
       }
     </>
@@ -77,13 +76,10 @@ function App() {
 
   return (
     <>
-
-
       <Navigation query={query} handleInputChange={handleInputChange} />
       <Sidebar handleChange={handleChange} />
       <Recommended handleClick={handleClick} />
       <Products result={result} />
-
     </>
   );
 }
